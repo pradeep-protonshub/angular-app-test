@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of collection.data | paginate: config |  filter: searchString " (click)="api_data(item)">
+        <tr *ngFor="let item of collection.data | paginate:{ itemsPerPage: 10, currentPage: p } |  filter: searchString " (click)="api_data(item)">
          <td>{{item.title}}</td>
          <td>{{item.url}}</td>
         <td>{{item.created_at}}</td>
@@ -38,5 +38,6 @@
         <div *ngFor="let item of pageOfItems">{{item.name}}</div>
     </div> -->
   
-    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    <!-- <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls> -->
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

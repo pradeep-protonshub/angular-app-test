@@ -16,6 +16,10 @@ export class AppComponent  implements OnInit{
   get_data:any;
   searchText;
 i:number
+
+p: number = 1;
+
+
 config: any;
 collection = {  data: [] };
   constructor(private test:TestService,public dialog: MatDialog) { }
@@ -38,23 +42,23 @@ collection = {  data: [] };
           title:  this.get_data[i].title,
           url:  this.get_data[i].url,
           created_at:  this.get_data[i].created_at,
-          author:  this.get_data[i].author,
+          author:  this.get_data[i].author
 
 
         }
       );
     }
  
-    this.config = {
-      itemsPerPage: 4,
-      currentPage: 1,
-      totalItems: this.get_data.length
-    };
+    // this.config = {
+    //   itemsPerPage: 4,
+    //   currentPage: 1,
+    //   totalItems: 3
+    // };
   })
 
-  setTimeout (() => {
-   window.location.reload()
- }, 10000);
+//   setTimeout (() => {
+//    window.location.reload()
+//  }, 10000);
  
 }
 

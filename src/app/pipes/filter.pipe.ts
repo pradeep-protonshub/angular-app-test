@@ -14,7 +14,8 @@ export class FilterPipe implements PipeTransform {
 
   matchValue(data, value) {
     return Object.keys(data).map((key) => {
-       return new RegExp(value, 'gi').test(data[key]);
+      // console.log(key)
+       return new RegExp(value, 'gi').test(data["title"]);
     }).some(result => result);
   }
 
