@@ -1,0 +1,67 @@
+<!-- <mat-form-field  class="example-chip-list">
+    <mat-chip-list #chipList aria-label="Fruit selection" >
+      <mat-chip  [selectable]="selectable"
+               [removable]="removable" *ngFor="let fruit of fruits; let i=index" (removed)="remove(fruit)" >
+               <div *ngIf="i<3">
+                {{fruit.name}}
+            </div>
+      
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input placeholder="New fruit..."
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             [matChipInputAddOnBlur]="addOnBlur"
+             (matChipInputTokenEnd)="add($event)" #val>
+            <button (click)="send(fruit)">Send</button> -->
+    <!-- </mat-chip-list>
+    
+  </mat-form-field > --> 
+
+
+
+  <div>  
+    <form [formGroup]="SchoolDetailsForm" (submit)="SaveData()">  
+        <table>  
+            <tr>  
+                <td>  
+                    <b>School Name</b>  
+                </td>  
+                <td>  
+                    <input  type="text" formControlName="SchoolName" />  
+                    <input  type="text" formControlName="CollageName" />  
+
+                    <input  type="text" formControlName="ThirdName" />  
+                    <input  type="text" formControlName="fourthName" />  
+
+                    <input  type="text" formControlName="FithName" />  
+                    <input  type="text" formControlName="sixName" />  
+
+                    <input  type="text" formControlName="SevenName" />  
+                    <input  type="text" formControlName="EeightName" />  
+
+                    <input  type="text" formControlName="nineName" />  
+                    <input  type="text" formControlName="tenName" />  
+                </td>  
+            </tr>  
+        </table>  
+        <br/>  
+        <table>  
+            <tr formArrayName="ClassDetails" *ngFor="let cd of SchoolDetailsForm.controls.ClassDetails.controls ;let i=index;">  
+                <td formGroupName={{i}}>  
+                    <b>   
+      Class {{cd.get('Class').value}}  
+     </b>  
+                    <input  type="text" formControlName="TotalStudent" placeholder="Total Student" />  
+                    <!-- <input  type="text" formControlName="GradeAStudent" placeholder="Total Grade A Student" />  
+                    <input  type="text" formControlName="GradeBStudent" placeholder="Total Grade B Student" />   -->
+                </td>  
+            </tr>  
+            <tr>  
+                <td>  
+                    <input type="submit" value="Click Me" />  
+                </td>  
+            </tr>  
+        </table>  
+    </form>  
+</div>    
